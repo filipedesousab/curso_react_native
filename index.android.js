@@ -1,8 +1,5 @@
 var React = require('react');
-var Text = require('react-native').Text;
-var Button = require('react-native').Button;
-var View = require('react-native').View;
-var AppRegistry = require('react-native').AppRegistry;
+var { Text, View, Button, AppRegistry } = require('react-native');
 
 const geraNumeroAleatorio = () => {
   var numero_aleatorio = Math.random();
