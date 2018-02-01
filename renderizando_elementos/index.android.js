@@ -5,9 +5,15 @@ import { Text, AppRegistry } from 'react-native';
 // Formatações
 const Estilos = {
   estiloTexto: {
-    fontSize: 30,
+    fontSize: 40,
     backgroundColor: '#085098',
-    height: 52
+    paddingTop: 15,
+    elevation: 10,
+    color: '#fff',
+    fontStyle: 'italic',
+    fontWeight: '900',
+    textAlign: 'center',
+    textDecorationLine: 'underline line-through'
   }
 };
 // Criar componente
