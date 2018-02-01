@@ -1,36 +1,44 @@
 // Import
 import React from 'react';
-import { Text, AppRegistry, View } from 'react-native';
+import { Text, AppRegistry, View, TouchableOpacity } from 'react-native';
 
 // Formatações
 const Estilos = {
   principal: {
-    flex: 1, // 1:1
-    backgroundColor: 'cornflowerblue',
+    paddingTop: 40
   },
-  topo: {
-    flex: 1,  // 1:5
-    backgroundColor: 'brown',
+  botao: {
+    backgroundColor: '#4888EC',
+    padding: 10,
+    borderColor: '#1d8eb8',
+    borderWidth: 3,
+    borderRadius: 1
   },
-  conteudo: {
-    flex: 3, // 3:5
-    backgroundColor: 'yellowgreen',
-  },
-  rodape: {
-    flex: 1, // 2:5
-    backgroundColor: 'orangered',
+  textoBotao: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    alignSelf: 'center'
   }
 };
+
+const botaoPressionado = () => {
+  alert('Botão pressionado')
+}
 // Criar componente
 const App = () => {
 
-  const { principal, topo, conteudo, rodape } = Estilos;
+  const { principal, botao, textoBotao } = Estilos;
 
   return (
     <View style={ principal }>
-      <Text style={ topo }>Topo</Text>
-      <Text style={ conteudo }>Conteúdo</Text>
-      <Text style={ rodape }>Rodapé</Text>
+      <TouchableOpacity
+        style={ botao }
+        onPress={ botaoPressionado }
+        accessibilityLabel="Clique para abrir as notícias!"
+      >
+        <Text style={ textoBotao }>Clique Aqui</Text>
+      </TouchableOpacity>
     </View>
   );
 };
