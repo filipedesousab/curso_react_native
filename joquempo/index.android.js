@@ -19,23 +19,33 @@ class MeuComponente extends Component {
 
 class joquempo extends Component {
 
-  constructor(props) {
+  constructor(props){
     super(props);
 
-    this.state = { texto: 'Texto teste' };
+    this.state = { escolhaUsuario: ''}
   }
 
-  alteraTexto() {
-    this.setState( {texto: 'Outra coisa'} );
+  joquempo( escolhaUsuario ){
+    this.setState({ escolhaUsuario: escolhaUsuario })
   }
 
   render() {
     return (
       <View>
-        <MeuComponente teste={this.state.texto}></MeuComponente>
+        <Text>Escolha do computador</Text>
+        <Text>Excolha do usuário: { this.state.escolhaUsuario }</Text>
+        <Text>Resultado</Text>
         <Button
-          title='Botão'
-          onPress={ () => { this.alteraTexto() } }
+          title="pedra"
+          onPress={ () => { this.joquempo('pedra') } }
+        />
+        <Button
+          title="papel"
+          onPress={ () => { this.joquempo('papel') } }
+        />
+        <Button
+          title="tesoura"
+          onPress={ () => { this.joquempo('tesoura') } }
         />
       </View>
     );
