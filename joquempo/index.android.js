@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Button
+  Button,
+  Image
 } from 'react-native';
 
 class MeuComponente extends Component {
@@ -69,6 +70,10 @@ class joquempo extends Component {
   render() {
     return (
       <View>
+        <Topo />
+        <View>
+
+        </View>
         <Text>Escolha do computador: { this.state.escolhaComputador }</Text>
         <Text>Excolha do usuário: { this.state.escolhaUsuario }</Text>
         <Text>Resultado { this.state.resultado }</Text>
@@ -86,6 +91,16 @@ class joquempo extends Component {
         />
       </View>
     );
+  }
+}
+
+class Topo extends Component {
+  render() {
+    return (
+      <View>
+        <Image source={require('./imgs/jokenpo.png')} />
+      </View>
+    )
   }
 }
 
