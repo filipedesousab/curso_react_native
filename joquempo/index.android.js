@@ -69,7 +69,7 @@ class joquempo extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.principal}>
         <Topo />
         <View style={styles.painelAcoes}>
           <View style={styles.btnEscolha}>
@@ -94,12 +94,8 @@ class joquempo extends Component {
         <View style={styles.palco}>
           <Text style={styles.txtResultado}>{ this.state.resultado }</Text>
           <View style={styles.icones}>
-            <View>
               <Icone escolha={this.state.escolhaComputador} jogador='Computador' />
-            </View>
-            <View>
               <Icone escolha={this.state.escolhaUsuario} jogador='Usuário' />
-            </View>
           </View>
         </View>
       </View>
@@ -148,6 +144,9 @@ class Icone extends Component {
 }
 
 const styles = StyleSheet.create({
+  principal: {
+    flex: 1
+  },
   btnEscolha: {
     width: 90,
   },
@@ -158,6 +157,7 @@ const styles = StyleSheet.create({
   },
   palco: {
     alignItems: 'center',
+    backgroundColor: 'rgb(195, 216, 249)',
   },
   txtResultado: {
     fontSize: 25,
@@ -167,10 +167,11 @@ const styles = StyleSheet.create({
   },
   icones: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   icone: {
     alignItems: 'center',
+    flex: 1
   },
   txtJogador: {
     fontSize: 18
