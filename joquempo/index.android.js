@@ -71,24 +71,29 @@ class joquempo extends Component {
     return (
       <View>
         <Topo />
-        <View>
-
+        <View style={styles.painelAcoes}>
+          <View style={styles.btnEscolha}>
+          <Button
+            title="pedra"
+            onPress={ () => { this.joquempo('pedra') } }
+          />
+          </View>
+          <View style={styles.btnEscolha}>
+            <Button
+              title="papel"
+              onPress={ () => { this.joquempo('papel') } }
+            />
+          </View>
+          <View style={styles.btnEscolha}>
+            <Button
+              title="tesoura"
+              onPress={ () => { this.joquempo('tesoura') } }
+            />
+          </View>
         </View>
         <Text>Escolha do computador: { this.state.escolhaComputador }</Text>
         <Text>Excolha do usuário: { this.state.escolhaUsuario }</Text>
         <Text>Resultado { this.state.resultado }</Text>
-        <Button
-          title="pedra"
-          onPress={ () => { this.joquempo('pedra') } }
-        />
-        <Button
-          title="papel"
-          onPress={ () => { this.joquempo('papel') } }
-        />
-        <Button
-          title="tesoura"
-          onPress={ () => { this.joquempo('tesoura') } }
-        />
       </View>
     );
   }
@@ -103,5 +108,16 @@ class Topo extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  btnEscolha: {
+    width: 90,
+  },
+  painelAcoes: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+});
 
 AppRegistry.registerComponent('joquempo', () => joquempo);
