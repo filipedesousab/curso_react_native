@@ -91,9 +91,14 @@ class joquempo extends Component {
             />
           </View>
         </View>
-        <Text>Escolha do computador: { this.state.escolhaComputador }</Text>
-        <Text>Excolha do usuário: { this.state.escolhaUsuario }</Text>
-        <Text>Resultado { this.state.resultado }</Text>
+        <View style={styles.palco}>
+          <Text style={styles.txtResultado}>{ this.state.resultado }</Text>
+
+          <Text>Escolha do computador: { this.state.escolhaComputador }</Text>
+          <Image source={require(`./imgs/pedra.png`)} />
+          <Text>Excolha do usuário: { this.state.escolhaUsuario }</Text>
+          <Image source={require(`./imgs/papel.png`)} />
+        </View>
       </View>
     );
   }
@@ -116,8 +121,17 @@ const styles = StyleSheet.create({
   painelAcoes: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 10,
+    marginVertical: 10,
   },
+  palco: {
+    alignItems: 'center',
+  },
+  txtResultado: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: 'red',
+    height: 40,
+  }
 });
 
 AppRegistry.registerComponent('joquempo', () => joquempo);
