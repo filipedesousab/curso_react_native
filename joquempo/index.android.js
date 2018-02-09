@@ -8,15 +8,10 @@ import {
   Image
 } from 'react-native';
 
-class MeuComponente extends Component {
-  render () {
-    return (
-      <View>
-        <Text>{this.props.teste}</Text>
-      </View>
-    )
-  }
-}
+import Topo from './src/components/topo';
+import Icone from './src/components/icone';
+
+import styles from './src/styles/styles';
 
 class joquempo extends Component {
 
@@ -102,80 +97,5 @@ class joquempo extends Component {
     );
   }
 }
-
-class Topo extends Component {
-  render() {
-    return (
-      <View>
-        <Image source={require('./imgs/jokenpo.png')} />
-      </View>
-    )
-  }
-}
-
-class Icone extends Component {
-  render() {
-    if(this.props.escolha == 'pedra'){
-      return (
-        <View style={styles.icone}>
-          <Text style={styles.txtJogador}>{ this.props.jogador }</Text>
-          <Image source={require(`./imgs/pedra.png`)} />
-        </View>
-      )
-    }else if(this.props.escolha == 'papel'){
-      return (
-        <View style={styles.icone}>
-          <Text style={styles.txtJogador}>{ this.props.jogador }</Text>
-          <Image source={require(`./imgs/papel.png`)} />
-        </View>
-      )
-    }else if(this.props.escolha == 'tesoura'){
-      return (
-        <View style={styles.icone}>
-          <Text style={styles.txtJogador}>{ this.props.jogador }</Text>
-          <Image source={require(`./imgs/tesoura.png`)} />
-        </View>
-      )
-    }else{
-      return false;
-    }
-
-  }
-}
-
-const styles = StyleSheet.create({
-  principal: {
-    flex: 1
-  },
-  btnEscolha: {
-    width: 90,
-  },
-  painelAcoes: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 10,
-  },
-  palco: {
-    alignItems: 'center',
-    backgroundColor: 'rgb(195, 216, 249)',
-  },
-  txtResultado: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: 'red',
-    height: 40,
-  },
-  icones: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  icone: {
-    alignItems: 'center',
-    flex: 1
-  },
-  txtJogador: {
-    fontSize: 18
-  }
-});
 
 AppRegistry.registerComponent('joquempo', () => joquempo);
