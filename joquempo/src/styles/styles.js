@@ -1,10 +1,10 @@
 import {
-	StyleSheet
+  StyleSheet,
 } from 'react-native';
 
 const styles = StyleSheet.create({
   principal: {
-    flex: 1
+    flex: 1,
   },
   btnEscolha: {
     width: 90,
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   palco: {
     alignItems: 'center',
     backgroundColor: 'rgb(195, 216, 249)',
-    flex: 1
+    flex: 1,
   },
   txtResultado: {
     fontSize: 25,
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   icones: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    flex: 1
+    flex: 1,
   },
 });
 

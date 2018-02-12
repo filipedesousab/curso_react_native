@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import {
-	Image,
-	View
+  Image,
+  View,
 } from 'react-native';
+
+const imagem = require('../../imgs/jokenpo.png');
 
 class Topo extends Component {
   render() {
     return (
       <View>
-        <Image source={require('../../imgs/jokenpo.png')} />
+        <Image source={imagem} />
       </View>
-    )
+    );
   }
 }
 
