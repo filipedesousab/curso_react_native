@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  StatusBar,
   StyleSheet,
   Text,
   View
@@ -11,7 +12,12 @@ import BarraNavegacao from './src/components/barraNavegacao';
 export default class atm_consultoria extends Component {
   render() {
     return (
-      <BarraNavegacao />
+      <View>
+        <StatusBar
+          backgroundColor='#CCC'
+        />
+        <BarraNavegacao />
+      </View>
     );
   }
 }
