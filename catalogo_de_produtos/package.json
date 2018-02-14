@@ -11,7 +11,10 @@
     "react-native": "0.44.0"
   },
   "devDependencies": {
+    "axios": "^0.17.1",
     "babel-jest": "22.2.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-native": "4.0.0",
     "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
