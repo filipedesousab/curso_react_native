@@ -38,10 +38,10 @@ export default class CenaContato extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: '#FFF' }}>
         <StatusBar
-          backgroundColor='#B9C941'
+          backgroundColor='#61BD8C'
         />
 
-				<BarraNavegacao voltar navigator={this.props.navigator}/>
+				<BarraNavegacao voltar navigator={this.props.navigator} codDeFundo='#61BD8C' />
 
         <ScrollView>
           <View style={styles.principal}>

@@ -38,10 +38,10 @@ export default class CenaEmpresa extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: '#FFF' }}>
         <StatusBar
-          backgroundColor='#B9C941'
+          backgroundColor='#EC7148'
         />
 
-				<BarraNavegacao voltar navigator={this.props.navigator}/>
+				<BarraNavegacao voltar navigator={this.props.navigator} codDeFundo='#EC7148' />
 
         <ScrollView>
           <View style={styles.principal}>
