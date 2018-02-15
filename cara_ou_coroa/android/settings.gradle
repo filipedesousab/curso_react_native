@@ -1,0 +1,3 @@
+rootProject.name = 'cara_ou_coroa'
+
+include ':app'
