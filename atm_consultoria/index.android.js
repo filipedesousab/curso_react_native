@@ -8,6 +8,7 @@ import CenaPrincipal from './src/components/cenaPrincipal';
 import CenaClientes from './src/components/cenaClientes';
 import CenaContato from './src/components/cenaContato';
 import CenaEmpresa from './src/components/cenaEmpresa';
+import CenaServico from './src/components/cenaServico';
 
 class atm_consultoria extends Component {
   render() {
@@ -28,6 +29,9 @@ class atm_consultoria extends Component {
           }else if(route.id === 'd') {
             // Exibir a cena clientes
             return ( <CenaEmpresa navigator={navigator} /> )
+          }else if(route.id === 'e') {
+            // Exibir a cena clientes
+            return ( <CenaServico navigator={navigator} /> )
           }
         }}
       />
