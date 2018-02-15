@@ -7,6 +7,7 @@ import { Navigator } from 'react-native-deprecated-custom-components';
 import CenaPrincipal from './src/components/cenaPrincipal';
 import CenaClientes from './src/components/cenaClientes';
 import CenaContato from './src/components/cenaContato';
+import CenaEmpresa from './src/components/cenaEmpresa';
 
 class atm_consultoria extends Component {
   render() {
@@ -24,6 +25,9 @@ class atm_consultoria extends Component {
           }else if(route.id === 'c') {
             // Exibir a cena clientes
             return ( <CenaContato navigator={navigator} /> )
+          }else if(route.id === 'd') {
+            // Exibir a cena clientes
+            return ( <CenaEmpresa navigator={navigator} /> )
           }
         }}
       />
