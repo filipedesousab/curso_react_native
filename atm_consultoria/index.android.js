@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View
+  AppRegistry
 } from 'react-native';
+import { Navigator } from 'react-native-deprecated-custom-components';
 
-import BarraNavegacao from './src/components/barraNavegacao';
+import CenaPrincipal from './src/components/cenaPrincipal';
+import CenaClientes from './src/components/cenaClientes';
 
-export default class atm_consultoria extends Component {
+class atm_consultoria extends Component {
   render() {
     return (
-      <View>
-        <StatusBar
-          backgroundColor='#CCC'
-        />
-        <BarraNavegacao />
-      </View>
+      <Navigator
+        initialRoute={{ id:'a' }}
+        renderScene={(route, navigator) => {
+          // Definir a cena com base na rota
+          if(route.id == 'a') {
+            // Exibir a cena principal
+            return ( <CenaPrincipal /> )
+          }else if(route.id == 'b') {
+            // Exibir a cena clientes
+            return ( <CenaClientes /> )
+          }
+        }}
+      />
     );
   }
 }
