@@ -52,36 +52,50 @@ export default class CenaPrincipal extends Component {
             </View>
             <View style={styles.menu}>
               <View style={styles.menuGrupo}>
+
 								<TouchableHighlight
+									underlayColor={'#B9C941'}
+									activeOpacity={0.3}
 									onPress={() => {
 										this.props.navigator.push({ id: 'b' });
 									}}
 								>
 	                <Image style={styles.itemMenu} source={menuCliente} />
 								</TouchableHighlight>
+
 								<TouchableHighlight
+									underlayColor={'#61BD8C'}
+									activeOpacity={0.3}
 									onPress={() => {
 										this.props.navigator.push({ id: 'c' });
 									}}
 								>
 	                <Image style={styles.itemMenu} source={menuContato} />
 								</TouchableHighlight>
+
               </View>
               <View style={styles.menuGrupo}>
+
 								<TouchableHighlight
+									underlayColor={'#EC7148'}
+									activeOpacity={0.3}
 									onPress={() => {
 										this.props.navigator.push({ id: 'd' });
 									}}
 								>
                 	<Image style={styles.itemMenu} source={menuEmpresa} />
 								</TouchableHighlight>
+
 								<TouchableHighlight
+									underlayColor={'#19D1C8'}
+									activeOpacity={0.3}
 									onPress={() => {
 										this.props.navigator.push({ id: 'e' });
 									}}
 								>
                 	<Image style={styles.itemMenu} source={menuServico} />
 								</TouchableHighlight>
+
               </View>
             </View>
           </View>
