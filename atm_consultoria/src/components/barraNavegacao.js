@@ -3,6 +3,7 @@ import {
   Image,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
 
@@ -25,7 +26,14 @@ export default class BarraNavegacao extends Component {
     if(this.props.voltar) {
       return (
         <View style={styles.barraTitulo}>
+        <TouchableHighlight
+          onPress={() => {
+            this.props.navigator.pop();
+          }}
+        >
           <Image source={require('../imgs/btn_voltar.png')} />
+        </TouchableHighlight>
+
           <Text style={styles.titulo}>ATM Consultoria</Text>
         </View>
       );
