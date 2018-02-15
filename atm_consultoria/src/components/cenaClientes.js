@@ -44,7 +44,7 @@ export default class CenaClientes extends Component {
         <StatusBar
           backgroundColor='#B9C941'
         />
-        <BarraNavegacao />
+        <BarraNavegacao voltar />
         <ScrollView>
           <View style={styles.principal}>
 

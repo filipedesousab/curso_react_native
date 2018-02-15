@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Image,
   StyleSheet,
   Text,
   View
@@ -21,6 +22,14 @@ const styles = StyleSheet.create({
 
 export default class BarraNavegacao extends Component {
   render() {
+    if(this.props.voltar) {
+      return (
+        <View style={styles.barraTitulo}>
+          <Image source={require('../imgs/btn_voltar.png')} />
+          <Text style={styles.titulo}>ATM Consultoria</Text>
+        </View>
+      );
+    }
     return (
       <View style={styles.barraTitulo}>
         <Text style={styles.titulo}>ATM Consultoria</Text>
