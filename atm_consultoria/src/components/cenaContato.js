@@ -36,7 +36,7 @@ const detalheContato = require('../imgs/detalhe_contato.png');
 export default class CenaContato extends Component {
   render() {
     return (
-      <View style={{ flex: 1}}>
+      <View style={{ flex: 1, backgroundColor: '#FFF' }}>
         <StatusBar
           backgroundColor='#B9C941'
         />
