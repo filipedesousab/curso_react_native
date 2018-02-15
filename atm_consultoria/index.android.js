@@ -33,7 +33,7 @@ class atm_consultoria extends Component {
             case 'servico':
               // Exibir a cena clientes
               return (<CenaServico navigator={navigator} />);
-            case default:
+            default:
               return false;
           }
         }}
