@@ -14,12 +14,12 @@ class atm_consultoria extends Component {
         initialRoute={{ id:'a' }}
         renderScene={(route, navigator) => {
           // Definir a cena com base na rota
-          if(route.id == 'a') {
+          if(route.id === 'a') {
             // Exibir a cena principal
-            return ( <CenaPrincipal /> )
-          }else if(route.id == 'b') {
+            return ( <CenaPrincipal navigator={navigator} /> )
+          }else if(route.id === 'b') {
             // Exibir a cena clientes
-            return ( <CenaClientes /> )
+            return ( <CenaClientes navigator={navigator} /> )
           }
         }}
       />

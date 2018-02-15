@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {
-	Button,
 	Image,
   ScrollView,
   StatusBar,
 	StyleSheet,
 	Text,
+	TouchableHighlight,
 	View
 } from 'react-native';
 
@@ -52,8 +52,14 @@ export default class CenaPrincipal extends Component {
             </View>
             <View style={styles.menu}>
               <View style={styles.menuGrupo}>
-                <Image style={styles.itemMenu} source={menuCliente} />
-                <Image style={styles.itemMenu} source={menuContato} />
+								<TouchableHighlight
+									onPress={() => {
+										this.props.navigator.push({ id: 'b' });
+									}}
+								>
+	                <Image style={styles.itemMenu} source={menuCliente} />
+								</TouchableHighlight>
+	                <Image style={styles.itemMenu} source={menuContato} />
               </View>
               <View style={styles.menuGrupo}>
                 <Image style={styles.itemMenu} source={menuEmpresa} />
