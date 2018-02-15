@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {
-	Image,
+  Image,
   ScrollView,
   StatusBar,
-	StyleSheet,
-	Text,
-	TouchableHighlight,
-	View
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View,
 } from 'react-native';
 
 import BarraNavegacao from './barraNavegacao';
@@ -18,17 +18,17 @@ const styles = StyleSheet.create({
   },
   logo: {
     marginTop: 30,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   menu: {
-    alignItems: 'center'
+    alignItems: 'center',
   },
   menuGrupo: {
     flexDirection: 'row',
   },
   itemMenu: {
-    margin: 15
-  }
+    margin: 15,
+  },
 });
 
 const logo = require('../imgs/logo.png');
@@ -42,65 +42,69 @@ export default class CenaPrincipal extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: '#FFF' }}>
         <StatusBar
-          backgroundColor='#CCC'
+          backgroundColor="#CCC"
         />
-        <BarraNavegacao codDeFundo='#CCC' />
+
+        <BarraNavegacao codDeFundo="#CCC" />
+
         <ScrollView>
           <View style={styles.principal}>
+
             <View style={styles.logo}>
               <Image source={logo} />
             </View>
+
             <View style={styles.menu}>
               <View style={styles.menuGrupo}>
 
-								<TouchableHighlight
-									underlayColor={'#B9C941'}
-									activeOpacity={0.3}
-									onPress={() => {
-										this.props.navigator.push({ id: 'b' });
+                <TouchableHighlight
+                  underlayColor="#B9C941"
+                  activeOpacity={0.3}
+                  onPress={() => {
+										this.props.navigator.push({ id: 'clientes' });
 									}}
-								>
-	                <Image style={styles.itemMenu} source={menuCliente} />
-								</TouchableHighlight>
+                >
+                  <Image style={styles.itemMenu} source={menuCliente} />
+                </TouchableHighlight>
 
-								<TouchableHighlight
-									underlayColor={'#61BD8C'}
-									activeOpacity={0.3}
-									onPress={() => {
-										this.props.navigator.push({ id: 'c' });
+                <TouchableHighlight
+                  underlayColor="#61BD8C"
+                  activeOpacity={0.3}
+                  onPress={() => {
+										this.props.navigator.push({ id: 'contato' });
 									}}
-								>
-	                <Image style={styles.itemMenu} source={menuContato} />
-								</TouchableHighlight>
+                >
+                  <Image style={styles.itemMenu} source={menuContato} />
+                </TouchableHighlight>
 
               </View>
               <View style={styles.menuGrupo}>
 
-								<TouchableHighlight
-									underlayColor={'#EC7148'}
-									activeOpacity={0.3}
-									onPress={() => {
-										this.props.navigator.push({ id: 'd' });
+                <TouchableHighlight
+                  underlayColor="#EC7148"
+                  activeOpacity={0.3}
+                  onPress={() => {
+										this.props.navigator.push({ id: 'empresa' });
 									}}
-								>
-                	<Image style={styles.itemMenu} source={menuEmpresa} />
-								</TouchableHighlight>
+                >
+                  <Image style={styles.itemMenu} source={menuEmpresa} />
+                </TouchableHighlight>
 
-								<TouchableHighlight
-									underlayColor={'#19D1C8'}
-									activeOpacity={0.3}
-									onPress={() => {
-										this.props.navigator.push({ id: 'e' });
+                <TouchableHighlight
+                  underlayColor="#19D1C8"
+                  activeOpacity={0.3}
+                  onPress={() => {
+										this.props.navigator.push({ id: 'servico' });
 									}}
-								>
-                	<Image style={styles.itemMenu} source={menuServico} />
-								</TouchableHighlight>
+                >
+                  <Image style={styles.itemMenu} source={menuServico} />
+                </TouchableHighlight>
 
               </View>
             </View>
           </View>
         </ScrollView>
       </View>
-    )
+    );
   }
 }

@@ -14,24 +14,27 @@ class atm_consultoria extends Component {
   render() {
     return (
       <Navigator
-        initialRoute={{ id:'a' }}
+        initialRoute={{ id: 'principal' }}
         renderScene={(route, navigator) => {
           // Definir a cena com base na rota
-          if(route.id === 'a') {
-            // Exibir a cena principal
-            return ( <CenaPrincipal navigator={navigator} /> )
-          }else if(route.id === 'b') {
-            // Exibir a cena clientes
-            return ( <CenaClientes navigator={navigator} /> )
-          }else if(route.id === 'c') {
-            // Exibir a cena clientes
-            return ( <CenaContato navigator={navigator} /> )
-          }else if(route.id === 'd') {
-            // Exibir a cena clientes
-            return ( <CenaEmpresa navigator={navigator} /> )
-          }else if(route.id === 'e') {
-            // Exibir a cena clientes
-            return ( <CenaServico navigator={navigator} /> )
+          switch (route.id) {
+            case 'principal':
+              // Exibir a cena principal
+              return (<CenaPrincipal navigator={navigator} />);
+            case 'clientes':
+              // Exibir a cena clientes
+              return (<CenaClientes navigator={navigator} />);
+            case 'contato':
+              // Exibir a cena contato
+              return (<CenaContato navigator={navigator} />);
+            case 'empresa':
+              // Exibir a cena empresa
+              return (<CenaEmpresa navigator={navigator} />);
+            case 'servico':
+              // Exibir a cena clientes
+              return (<CenaServico navigator={navigator} />);
+            case default:
+              return false;
           }
         }}
       />

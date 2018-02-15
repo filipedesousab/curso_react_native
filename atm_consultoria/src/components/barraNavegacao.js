@@ -4,37 +4,37 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  View
+  View,
 } from 'react-native';
 
 const styles = StyleSheet.create({
   barraTitulo: {
     backgroundColor: '#CCC',
     padding: 10,
-    height: 60
+    height: 60,
   },
   titulo: {
     flex: 1,
     fontSize: 18,
     textAlign: 'center',
-    color: '#000'
-  }
+    color: '#000',
+  },
 });
 
 export default class BarraNavegacao extends Component {
   render() {
-    if(this.props.voltar) {
+    if (this.props.voltar) {
       return (
         <View style={[styles.barraTitulo, { backgroundColor: this.props.codDeFundo }]}>
-        <TouchableHighlight
-          underlayColor={this.props.codDeFundo}
-          activeOpacity={0.3}
-          onPress={() => {
+          <TouchableHighlight
+            underlayColor={this.props.codDeFundo}
+            activeOpacity={0.3}
+            onPress={() => {
             this.props.navigator.pop();
           }}
-        >
-          <Image source={require('../imgs/btn_voltar.png')} />
-        </TouchableHighlight>
+          >
+            <Image source={require('../imgs/btn_voltar.png')} />
+          </TouchableHighlight>
 
           <Text style={styles.titulo}>ATM Consultoria</Text>
         </View>

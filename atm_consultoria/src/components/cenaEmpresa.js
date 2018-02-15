@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {
-	Image,
+  Image,
   ScrollView,
   StatusBar,
-	StyleSheet,
-	Text,
-	View
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
 
 import BarraNavegacao from './barraNavegacao';
@@ -14,21 +14,21 @@ const styles = StyleSheet.create({
   principal: {
     flex: 1,
   },
-	cabecalho: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		marginVertical: 15
-	},
-	txtCabecalho: {
-		color: '#EC7148',
-		fontSize: 25
-	},
-	detalheEmpresa: {
-		padding: 20
-	},
-	txtDetalheEmpresa: {
-		fontSize: 18,
-	}
+  cabecalho: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 15,
+  },
+  txtCabecalho: {
+    color: '#EC7148',
+    fontSize: 25,
+  },
+  detalheEmpresa: {
+    padding: 20,
+  },
+  txtDetalheEmpresa: {
+    fontSize: 18,
+  },
 });
 
 const detalheEmpresa = require('../imgs/detalhe_empresa.png');
@@ -38,28 +38,28 @@ export default class CenaEmpresa extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: '#FFF' }}>
         <StatusBar
-          backgroundColor='#EC7148'
+          backgroundColor="#EC7148"
         />
 
-				<BarraNavegacao voltar navigator={this.props.navigator} codDeFundo='#EC7148' />
+        <BarraNavegacao voltar navigator={this.props.navigator} codDeFundo="#EC7148" />
 
         <ScrollView>
           <View style={styles.principal}>
 
-						<View style={styles.cabecalho}>
-	            <Image source={detalheEmpresa} />
-							<Text style={styles.txtCabecalho}>A empresa</Text>
-						</View>
+            <View style={styles.cabecalho}>
+              <Image source={detalheEmpresa} />
+              <Text style={styles.txtCabecalho}>A empresa</Text>
+            </View>
 
-						<View style={styles.detalheEmpresa}>
-							<Text style={styles.txtDetalheContato}>
+            <View style={styles.detalheEmpresa}>
+              <Text style={styles.txtDetalheContato}>
 								A ATM Consultoria está no mercado a mais de 20 anos...
-							</Text>
-						</View>
+              </Text>
+            </View>
 
           </View>
         </ScrollView>
       </View>
-    )
+    );
   }
 }
