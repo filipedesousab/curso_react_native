@@ -36,7 +36,14 @@ export default class Principal extends Component {
 
         <View style={styles.apresentacaoJogo}>
           <Image source={logo} />
-          <Image source={btnJogar} />
+
+          <TouchableHighlight
+            onPress={() => {
+              Actions.resultado();
+            }}
+          >
+            <Image source={btnJogar} />
+          </TouchableHighlight>
         </View>
 
         <View style={styles.rodape}>
