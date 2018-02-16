@@ -1,50 +1,21 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  Image,
-  StyleSheet,
-  Text,
-  View
 } from 'react-native';
+import { Router, Scene } from 'react-native-router-flux';
 
-const logo = require('./src/imgs/logo.png');
-const btnJogar = require('./src/imgs/botao_jogar.png');
-const btnSobreJogo = require('./src/imgs/sobre_jogo.png');
-const btnOutrosJogos = require('./src/imgs/outros_jogos.png');
-
-const styles = StyleSheet.create({
-  cenaPrincipal: {
-    flex: 1,
-    backgroundColor: '#61BD8C'
-  },
-  apresentacaoJogo: {
-    flex: 10,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  rodape: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
-});
+import Principal from './src/components/principal';
+import SobreJogo from './src/components/sobreJogo';
+import OutrosJogos from './src/components/outrosJogos';
 
 export default class cara_ou_coroa extends Component {
   render() {
     return (
-      <View style={styles.cenaPrincipal}>
-
-        <View style={styles.apresentacaoJogo}>
-          <Image source={logo} />
-          <Image source={btnJogar} />
-        </View>
-
-        <View style={styles.rodape}>
-          <Image source={btnSobreJogo} />
-          <Image source={btnOutrosJogos} />
-        </View>
-
-      </View>
+      <Router>
+        <Scene key='principal' component={Principal} initil />
+        <Scene key='sobreJogo' component={SobreJogo} />
+        <Scene key='outroJogos' component={OutrosJogos} />
+      </Router>
     );
   }
 }
