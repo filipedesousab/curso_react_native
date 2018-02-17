@@ -4,8 +4,10 @@ import {
 	View
 } from 'react-native';
 
-export default props => (
+const Painel = props => (
   <View>
     <Text>Painel</Text>
   </View>
 );
+
+export { Painel };
