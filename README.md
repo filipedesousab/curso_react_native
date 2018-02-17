@@ -3,42 +3,50 @@
 
 ## Apps criados durante o curso
 
-### Gerador de números aleatórios
+### [Gerador de números aleatórios](criando_meu_primeiro_app_com_react_native)
 
 ![Gerador de numeros aleatórios](./criando_meu_primeiro_app_com_react_native/screenshots/principal.png)
 
-Primeiro App do curso.
+Primeiro App do curso.<br/>
 Inicia mostrando a criação de um projeto e traz uma introdução ao JSX e ao ES6
 
-### Frases do dia
+### [Frases do dia](renderizando_elementos)
 
 ![Frases do dia - Principal](./renderizando_elementos/screenshots/principal.png)
 ![Frases do dia - Frase Gerada](./renderizando_elementos/screenshots/frase_gerada.png)
 
-Segundo App do curso.
+Segundo App do curso.<br/>
 Traz o conceito de altura, largura e densidade nas telas dos dispositivos, mostra a utilização do flexbox, e aplica estilos aos componentes do app.
 
-### Jokenpo
+### [Jokenpo](joquempo)
 
-![Frases do dia - Principal](./joquempo/screenshots/principal.png)
+![Jokempo - Principal](./joquempo/screenshots/principal.png)
 
-Terceiro App do curso.
+Terceiro App do curso.<br/>
 Um pequeno jogo que traz a introdução a components, uma etilização mais detalhada e mostar bem a utilização de props e state.
 
-### Catálogo de Produtos
+### [Catálogo de Produtos](catalogo_de_produtos)
 
-![Frases do dia - Principal](./catalogo_de_produtos/screenshots/principal.png)
+![Catálogo de Produtos - Principal](./catalogo_de_produtos/screenshots/principal.png)
 
-Quarto App do curso.
+Quarto App do curso.<br/>
 Nesse app tempos a experiência de fazer requisições HTTP, e fazer a listagem dinâmica do conteúdo com base na requisição. Também temos a explicação do ciclo de vida de um componente e a utilização do Remote debugging
 
-### ATM Consultoria
+### [ATM Consultoria](atm_consultoria)
 
-![Frases do dia - Principal](./atm_consultoria/screenshots/principal.png)
-![Frases do dia - Principal](./atm_consultoria/screenshots/clientes.png)
-![Frases do dia - Principal](./atm_consultoria/screenshots/contato.png)
-![Frases do dia - Principal](./atm_consultoria/screenshots/empresa.png)
-![Frases do dia - Principal](./atm_consultoria/screenshots/servicos.png)
+![ATM Consultoria - Principal](./atm_consultoria/screenshots/principal.png)
+![ATM Consultoria - Nossos clientes](./atm_consultoria/screenshots/clientes.png)
+![ATM Consultoria - Contatos](./atm_consultoria/screenshots/contato.png)
+![ATM Consultoria - A empresa](./atm_consultoria/screenshots/empresa.png)
+![ATM Consultoria - Nossos Serviços](./atm_consultoria/screenshots/servicos.png)
 
-Quinto App do curso.
-Nesse app tempos a oportunidade de trabalhar com a navegação entre cenas. Embora utilizamos o componente Navegate do React, que está depreciado (até o momento o curso n apresentou uma alternativa), a criação do app foi bastante produtiva pois envolveu diversos conceitos explicados em aulas anteriores. Nesse momento é esperado que o aluno já consiga ir aplicando os conhecimentos de forma mais automática.
+Quinto App do curso.<br/>
+Nesse app tempos a oportunidade de trabalhar com a navegação entre cenas. Embora utilizamos o componente Navegate do React, que está depreciado, a criação do app foi bastante produtiva pois envolveu diversos conceitos explicados em aulas anteriores. Nesse momento é esperado que o aluno já consiga ir aplicando os conhecimentos de forma mais automática.
+
+### [Cara ou Coroa](cara_ou_coroa)
+
+![Cara ou Coroa - Principal](./cara_ou_coroa/screenshots/principal.png)
+![Cara ou Coroa - Resultado](./cara_ou_coroa/screenshots/resultado.png)
+
+Sexto App do Curso.<br/>
+Nesse app nos é apresentado o React Native Router Flux e algumas funcionalidades dele, como: trocar de cena e colocar título. Foi de grande proveito, pois se tornou uma ótima alternativa ao Navegate.
