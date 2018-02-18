@@ -8,7 +8,8 @@ import {
 const styles = StyleSheet.create({
   visor: {
     height: 100,
-    fontSize: 30
+    fontSize: 30,
+		color: '#000'
   }
 });
 
@@ -18,6 +19,7 @@ export default props => (
       placeholder='Resultado'
       editable={false}
       style={styles.visor}
+			value={props.resultado}
     />
   </View>
 );

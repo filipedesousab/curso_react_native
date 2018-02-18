@@ -7,6 +7,6 @@ import {
 export default props => (
   <Button
   	title="Calcular"
-  	onPress={ () => { props.acao() } }
+  	onPress={ () => { props.acao(props.num1, props.num2, props.operacao) } }
   />
 );
