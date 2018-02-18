@@ -6,19 +6,12 @@ import {
 
 
 export default class Operacao extends Component {
-
-	constructor(props) {
-		super(props);
-
-		this.state = { operacao: '' }
-	}
-
 	render(){
 		return (
 			<Picker
 				style={styles.operacao}
-				selectedValue={this.state.operacao}
-				onValueChange={operacao => { this.setState({ operacao }); }}
+				selectedValue={this.props.operacao}
+				onValueChange={operacao => { this.props.acao(operacao); }}
 			>
 			  <Picker.Item
 					label='Soma'

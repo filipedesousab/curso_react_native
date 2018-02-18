@@ -15,8 +15,10 @@ const styles = StyleSheet.create({
 
 export default props => (
   <TextInput
+		style={styles.numero}
     placeholder=''
     editable={true}
-    style={styles.numero}
+		value={props.num}
+		onChangeText={ valor => { props.atualizaValor(props.nome, valor) } }
   />
 );
