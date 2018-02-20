@@ -47,7 +47,7 @@ export default class firebaseTeste extends Component {
         }
         alert( mensagemErro );
       }
-    )
+    );
   }
 
   verificarUsuarioLogado() {
@@ -62,7 +62,7 @@ export default class firebaseTeste extends Component {
         }
       }
     )
-    
+
     /*const usuarioAtual = usuario.currentUser;
 
     if (usuarioAtual) {
@@ -72,20 +72,52 @@ export default class firebaseTeste extends Component {
     }*/
   }
 
+  deslogarUsuario() {
+    const usuario = firebase.auth();
+    usuario.signOut();
+  }
+
+  logarUsuario() {
+    let email = 'filipedesousab@gmail.com';
+    let senha = 'filipe12345';
+
+    const usuario = firebase.auth();
+    usuario.signInWithEmailAndPassword(
+      email,
+      senha
+    ).catch(
+      erro => {
+        // erro.code, erro.message
+        alert( erro.message );
+      }
+    );
+  }
+
   render() {
 
     return (
       <View>
+
         <Button
           title="Cadastrar Usuário"
           onPress={ () => { this.cadastrarUsuario() } }
         />
+
         <Button
           title="Verificar Usuário logado"
           onPress={ () => { this.verificarUsuarioLogado() } }
         />
-        <Text>
-        </Text>
+
+        <Button
+          title="Deslogar Usuário"
+          onPress={ () => { this.deslogarUsuario() } }
+        />
+
+        <Button
+          title="Logar Usuário"
+          onPress={ () => { this.logarUsuario() } }
+        />
+
       </View>
     );
   }
