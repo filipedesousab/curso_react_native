@@ -26,46 +26,65 @@ export default class firebaseTeste extends Component {
     firebase.initializeApp(config);
   }
 
-  salvarDados() {
-    let funcionarios = firebase.database().ref('funcionarios');
-    // database.ref('pontuacao').remove();
+  cadastrarUsuario() {
+    let email = 'filipedesousab@gmail.com';
+    let senha = 'filipe12345';
 
-    funcionarios.push().child('nome').set(
-      {
-        nome: 'Mariana SIlva',
-        altura: '1,65',
-        peso: '60KG'
+    const usuario = firebase.auth();
+
+    usuario.createUserWithEmailAndPassword(
+      email,
+      senha
+    ).catch(
+      erro => {
+        // erro.code, erro.message
+        let mensagemErro = '';
+
+        if (erro.code == 'auth/weak-password') {
+          mensagemErro = 'A senha precisa ter no minimo 6 caracteres';
+        } else {
+          mensagemErro = erro.code;
+        }
+        alert( mensagemErro );
       }
-    );
-    // funcionarios.remove();
-
+    )
   }
 
-  listarDados() {
-    let pontuacao = firebase.database().ref('pontuacao');
+  verificarUsuarioLogado() {
+    const usuario = firebase.auth();
 
-    pontuacao.on('value', snapshot => {
-      let pontos = snapshot.val();
-      this.setState({ pontuacao: pontos });
-    });
+    usuario.onAuthStateChanged(
+      usuarioAtual => {
+        if (usuarioAtual) {
+          alert('Usuário está logado');
+        } else {
+          alert('Usuário não está logado');
+        }
+      }
+    )
+    
+    /*const usuarioAtual = usuario.currentUser;
+
+    if (usuarioAtual) {
+      alert('Usuário está logado');
+    } else {
+      alert('Usuário não está logado');
+    }*/
   }
 
   render() {
 
-    let {pontuacao} = this.state;
-    
     return (
       <View>
         <Button
-          title="Salvar Dados"
-          onPress={ () => { this.salvarDados() } }
+          title="Cadastrar Usuário"
+          onPress={ () => { this.cadastrarUsuario() } }
         />
         <Button
-          title="Listar Dados"
-          onPress={ () => { this.listarDados() } }
+          title="Verificar Usuário logado"
+          onPress={ () => { this.verificarUsuarioLogado() } }
         />
         <Text>
-          {pontuacao}
         </Text>
       </View>
     );
