@@ -70,3 +70,9 @@ Nesse app nos é apresentado o React Native Router Flux e algumas funcionalidade
 Sétimo App do curso.<br/>
 Nesse app temos a experiência de controlar estados de componentes a partir de ação em outros componentes.<br/>
 Foram criados diversos componentes pais e filhos no qual foi necesário passar métodos e dados por props, de forma que o componente pai App pudesse gerenciar os estados de toda a aplicação.
+
+### [firebaseTeste](firebaseTeste)
+
+![firebaseTeste - Principal](./firebaseTeste/screenshots/principal.png)
+
+Esse App foi desenvolvido para termos algumas base do firebase como cadastrar usuario, fazer login e logout, verificar login e fazer um crud no banco de dados.
