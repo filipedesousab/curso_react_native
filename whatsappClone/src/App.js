@@ -3,7 +3,8 @@ import {
 } from 'react-native';
 
 import FormLogin from './components/formLogin';
+import FormCadastro from './components/formCadastro';
 
 export default props => (
-  <FormLogin />
+  <FormCadastro />
 );
