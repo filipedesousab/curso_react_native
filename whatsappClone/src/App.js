@@ -2,9 +2,8 @@ import React from 'react';
 import {
 } from 'react-native';
 
-import FormLogin from './components/formLogin';
-import FormCadastro from './components/formCadastro';
+import Routes from './Routes';
 
 export default props => (
-  <FormCadastro />
+  <Routes />
 );
