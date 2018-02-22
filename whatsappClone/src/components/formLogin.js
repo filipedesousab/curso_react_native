@@ -3,7 +3,7 @@ import { Button, Image, View, Text, TextInput, TouchableHighlight } from 'react-
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
-import { modificaEmail, modificaSenha } from '../actions/AutenticacaoAction';
+import { modificaEmail, modificaSenha } from '../actions/AutenticacaoActions';
 
 const formLogin = props => {
   return (
@@ -11,13 +11,14 @@ const formLogin = props => {
       <View style={{ flex: 1, padding: 10 }}>
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text style={{ fontSize: 25 }}>Whatsapp Clone</Text>
+          <Text style={{ fontSize: 25, color: '#fff' }}>Whatsapp Clone</Text>
         </View>
 
         <View style={{ flex: 2 }}>
           <TextInput
             style={{ fontSize: 20, height: 45 }}
             placeholder='E-mail'
+            placeholderTextColor='#fff'
             editable={true}
             value={props.email}
             onChangeText={ texto => props.modificaEmail(texto) }
@@ -25,6 +26,7 @@ const formLogin = props => {
           <TextInput
             style={{ fontSize: 20, height: 45 }}
             placeholder='Senha'
+            placeholderTextColor='#fff'
             editable={true}
             secureTextEntry={true}
             value={props.senha}
@@ -35,7 +37,7 @@ const formLogin = props => {
               Actions.cadastro();
             }}
           >
-            <Text style={{ fontSize: 20 }}>Ainda não tem cadastro? Cadastre-se</Text>
+            <Text style={{ fontSize: 20, color: '#fff' }}>Ainda não tem cadastro? Cadastre-se</Text>
           </TouchableHighlight>
         </View>
 
