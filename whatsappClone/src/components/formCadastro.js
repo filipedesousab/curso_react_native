@@ -26,6 +26,7 @@ const formCadastro = props => (
         style={{ fontSize: 20, height: 45 }}
         placeholder='Senha'
         editable={true}
+        secureTextEntry={true}
         value={props.senha}
         onChangeText={ texto => props.modificaSenha(texto) }
       />
