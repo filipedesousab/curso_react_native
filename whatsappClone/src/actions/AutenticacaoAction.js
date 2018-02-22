@@ -15,3 +15,12 @@ export const modificaSenha = (texto) => {
     payload: texto
   }
 }
+
+export const modificaNome = (texto) => {
+  console.log('AudenticacaoAction - modificaNome');
+  console.log(texto);
+  return {
+    type: 'modifica_nome',
+    payload: texto
+  }
+}
