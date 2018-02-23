@@ -1,52 +1,68 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, Image, View, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 
-import { modificaEmail, modificaSenha, modificaNome } from '../actions/AutenticacaoActions';
+import {
+  modificaEmail,
+  modificaSenha,
+  modificaNome,
+  cadastraUsuario
+} from '../actions/AutenticacaoActions';
 
-const formCadastro = props => (
-  <Image style={{ flex: 1, width: null }} source={require('../imgs/bg.png')}>
-    <View style={{ flex: 1, padding: 10 }}>
+class formCadastro extends Component {
 
-      <View style={{ flex: 4, justifyContent: 'center' }}>
-        <TextInput
-          style={{ fontSize: 20, height: 45 }}
-          placeholder='Nome'
-          placeholderTextColor='#fff'
-          editable={true}
-          value={props.nome}
-          onChangeText={ texto => props.modificaNome(texto) }
-        />
-        <TextInput
-          style={{ fontSize: 20, height: 45 }}
-          placeholder='E-mail'
-          placeholderTextColor='#fff'
-          editable={true}
-          value={props.email}
-          onChangeText={ texto => props.modificaEmail(texto) }
-        />
-        <TextInput
-          style={{ fontSize: 20, height: 45 }}
-          placeholder='Senha'
-          placeholderTextColor='#fff'
-          editable={true}
-          secureTextEntry={true}
-          value={props.senha}
-          onChangeText={ texto => props.modificaSenha(texto) }
-        />
-      </View>
+  _cadastraUsuario() {
+    const { nome, email, senha } = this.props;
 
-      <View style={{ flex: 1 }}>
-        <Button
-          color='#115E54'
-          title='Cadastrar'
-          onPress={ () => {  } }
-        />
-      </View>
+    this.props.cadastraUsuario({ nome, email, senha });
+  }
 
-    </View>
-  </Image>
-);
+  render() {
+    return (
+      <Image style={{ flex: 1, width: null }} source={require('../imgs/bg.png')}>
+        <View style={{ flex: 1, padding: 10 }}>
+
+          <View style={{ flex: 4, justifyContent: 'center' }}>
+            <TextInput
+              style={{ fontSize: 20, height: 45 }}
+              placeholder='Nome'
+              placeholderTextColor='#fff'
+              editable={true}
+              value={this.props.nome}
+              onChangeText={ texto => this.props.modificaNome(texto) }
+            />
+            <TextInput
+              style={{ fontSize: 20, height: 45 }}
+              placeholder='E-mail'
+              placeholderTextColor='#fff'
+              editable={true}
+              value={this.props.email}
+              onChangeText={ texto => this.props.modificaEmail(texto) }
+            />
+            <TextInput
+              style={{ fontSize: 20, height: 45 }}
+              placeholder='Senha'
+              placeholderTextColor='#fff'
+              editable={true}
+              secureTextEntry={true}
+              value={this.props.senha}
+              onChangeText={ texto => this.props.modificaSenha(texto) }
+            />
+          </View>
+
+          <View style={{ flex: 1 }}>
+            <Button
+              color='#115E54'
+              title='Cadastrar'
+              onPress={ () => { this._cadastraUsuario() } }
+            />
+          </View>
+
+        </View>
+      </Image>
+    );
+  }
+}
 
 const mapStateToProps = state => (
   {
@@ -56,4 +72,12 @@ const mapStateToProps = state => (
   }
 )
 
-export default connect(mapStateToProps, { modificaEmail, modificaSenha, modificaNome })(formCadastro);
+export default connect(
+  mapStateToProps,
+  {
+    modificaEmail,
+    modificaSenha,
+    modificaNome,
+    cadastraUsuario
+  }
+)(formCadastro);

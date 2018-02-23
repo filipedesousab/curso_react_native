@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 export const modificaEmail = (texto) => {
   console.log('AudenticacaoAction - modificaEmail');
   console.log(texto);
@@ -24,3 +26,15 @@ export const modificaNome = (texto) => {
     payload: texto
   }
 }
+
+export const cadastraUsuario = ({ nome, email, senha }) => {
+
+  firebase.auth().createUserWithEmailAndPassword(email, senha)
+    .then(user => console.log(user) )
+    .catch(erro => console.log(erro));
+
+  return {
+    type: 'cadastra_usuario',
+    payload: ''
+  };
+};
