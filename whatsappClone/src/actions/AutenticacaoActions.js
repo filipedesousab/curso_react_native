@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
 
 export const modificaEmail = (texto) => {
   console.log('AudenticacaoAction - modificaEmail');
@@ -36,7 +37,9 @@ export const cadastraUsuario = ({ nome, email, senha }) => {
 };
 
 const cadastroUsuarioSucesso = (dispatch) => {
-  dispatch ( { type: 'sucesso' } );
+  dispatch ( { type: 'cadastro_usuario_sucesso' } );
+
+  Actions.boasVindas();
 }
 
 const cadastraUsuarioErro = (erro, dispatch) => {
@@ -56,4 +59,8 @@ const cadastraUsuarioErro = (erro, dispatch) => {
   // Password should be at least 6 characters
   // A senha deve ter pelo menos 6 caracteres
   // auth/weak-password
+
+  // A network error (such as timeout, interrupted connection or unreachable host) has occurred.
+  // Ocorreu um erro de rede (como tempo limite, conexão interrompida ou host inacessível).
+  // network-request-failed
 }
