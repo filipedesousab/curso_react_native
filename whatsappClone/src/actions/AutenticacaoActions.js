@@ -52,23 +52,54 @@ const cadastroUsuarioSucesso = (dispatch) => {
 
 const cadastraUsuarioErro = (erro, dispatch) => {
   dispatch ( { type: 'cadastro_usuario_erro', payload: erro.message } );
-  // The email address is badly formatted.
-  // O endereço de e-mail está mal formatado.
-  // auth/invalid-email
-
-  // The email address is already in use by another account.
-  // O endereço de e-mail já está sendo usado por outra conta.
-  // auth/email-already-in-use
-
-  // The password must be 6 characters long or more.
-  // A senha deve ter 6 caracteres ou mais.
-  // auth/weak-password
-
-  // Password should be at least 6 characters
-  // A senha deve ter pelo menos 6 caracteres
-  // auth/weak-password
-
-  // A network error (such as timeout, interrupted connection or unreachable host) has occurred.
-  // Ocorreu um erro de rede (como tempo limite, conexão interrompida ou host inacessível).
-  // network-request-failed
 }
+
+export const autendicarUsuario = ({ email, senha }) => {
+
+  return dispatch => {
+    firebase.auth().signInWithEmailAndPassword(email, senha)
+      .then(value => loginUsuarioSucesso(dispatch))
+      .catch(erro => loginUsuarioErro(erro, dispatch));
+  }
+
+  return {
+    type: 'teste'
+  };
+}
+
+loginUsuarioSucesso = dispatch => {
+  dispatch ( { type: 'login_usuario_sucesso' } );
+}
+
+loginUsuarioErro = (erro, dispatch) => {
+  dispatch ({ type: 'login_usuario_erro' });
+}
+
+// ERROS A SEREM TRATADOS
+
+// ERRO PARA CADASTRO
+// The email address is already in use by another account.
+// O endereço de e-mail já está sendo usado por outra conta.
+// auth/email-already-in-use
+
+// ERRO PARA LOGIN
+// There is no user record corresponding to this identifier. The user may have been deleted.
+// Não há registro de usuário correspondente a este identificador. O usuário pode ter sido excluído.
+// auth/user-not-found
+
+// ERROS PARA CADASTRO E LOGIN
+// The email address is badly formatted.
+// O endereço de e-mail está mal formatado.
+// auth/invalid-email
+
+// The password must be 6 characters long or more.
+// A senha deve ter 6 caracteres ou mais.
+// auth/weak-password
+
+// Password should be at least 6 characters
+// A senha deve ter pelo menos 6 caracteres
+// auth/weak-password
+
+// A network error (such as timeout, interrupted connection or unreachable host) has occurred.
+// Ocorreu um erro de rede (como tempo limite, conexão interrompida ou host inacessível).
+// network-request-failed
