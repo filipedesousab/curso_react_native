@@ -40,7 +40,7 @@ const cadastroUsuarioSucesso = (dispatch) => {
 }
 
 const cadastraUsuarioErro = (erro, dispatch) => {
-  dispatch ( { type: 'erro' } );
+  dispatch ( { type: 'cadastro_usuario_erro', payload: erro.message } );
   // The email address is badly formatted.
   // O endereço de e-mail está mal formatado.
   // auth/invalid-email
