@@ -69,6 +69,8 @@ export const autendicarUsuario = ({ email, senha }) => {
 
 loginUsuarioSucesso = dispatch => {
   dispatch ( { type: 'login_usuario_sucesso' } );
+
+  Actions.principal();
 }
 
 loginUsuarioErro = (erro, dispatch) => {
