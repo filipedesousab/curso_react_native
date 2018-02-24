@@ -47,6 +47,7 @@ class formLogin extends Component {
               value={this.props.senha}
               onChangeText={ texto => this.props.modificaSenha(texto) }
             />
+            <Text style={{ color: '#ff0000', fontSize: 18 }}>{this.props.erroLogin}</Text>
             <TouchableHighlight
               onPress={() => {
                 Actions.cadastro();
@@ -76,7 +77,8 @@ console.log(state);
 return(
   {
     email: state.AutenticacaoReducer.email,
-    senha: state.AutenticacaoReducer.senha
+    senha: state.AutenticacaoReducer.senha,
+    erroLogin: state.AutenticacaoReducer.erroLogin
   }
 )
 }

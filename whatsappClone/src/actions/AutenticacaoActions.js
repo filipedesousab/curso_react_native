@@ -31,7 +31,7 @@ export const modificaNome = (texto) => {
 
 export const cadastraUsuario = ({ nome, email, senha }) => {
   return dispatch => {
-    firebase.auth().createUserWithEmailAndPassword(email, senha)
+    firebase.auth().createUserWithEmailAndPassword(email.trim(), senha)
       .then(user => {
         let emailB64 = base64.encode(email);
 
@@ -57,7 +57,7 @@ const cadastraUsuarioErro = (erro, dispatch) => {
 export const autendicarUsuario = ({ email, senha }) => {
 
   return dispatch => {
-    firebase.auth().signInWithEmailAndPassword(email, senha)
+    firebase.auth().signInWithEmailAndPassword(email.trim(), senha)
       .then(value => loginUsuarioSucesso(dispatch))
       .catch(erro => loginUsuarioErro(erro, dispatch));
   }
@@ -72,7 +72,7 @@ loginUsuarioSucesso = dispatch => {
 }
 
 loginUsuarioErro = (erro, dispatch) => {
-  dispatch ({ type: 'login_usuario_erro' });
+  dispatch ({ type: 'login_usuario_erro', payload: erro.message });
 }
 
 // ERROS A SEREM TRATADOS
