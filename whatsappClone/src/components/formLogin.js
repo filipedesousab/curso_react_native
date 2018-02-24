@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  ActivityIndicator,
   Button,
   Image,
   View,
@@ -14,10 +15,27 @@ import { modificaEmail, modificaSenha, autendicarUsuario } from '../actions/Aute
 
 class formLogin extends Component {
 
-  _autendicarUsuario(){
+  _autendicarUsuario() {
     const { email, senha } = this.props;
 
     this.props.autendicarUsuario({ email, senha })
+  }
+
+  renderBtnAcessar() {
+
+    if (this.props.loading_login) {
+      return (
+        <ActivityIndicator size='large'/>
+      )
+    }
+
+    return (
+      <Button
+        color='#115E54'
+        title='Acessar'
+        onPress={ () => this._autendicarUsuario() }
+      />
+    )
   }
 
   render() {
@@ -58,11 +76,7 @@ class formLogin extends Component {
           </View>
 
           <View style={{ flex: 1 }}>
-            <Button
-              color='#115E54'
-              title='Acessar'
-              onPress={ () => this._autendicarUsuario() }
-            />
+            {this.renderBtnAcessar()}
           </View>
 
         </View>
@@ -78,7 +92,8 @@ return(
   {
     email: state.AutenticacaoReducer.email,
     senha: state.AutenticacaoReducer.senha,
-    erroLogin: state.AutenticacaoReducer.erroLogin
+    erroLogin: state.AutenticacaoReducer.erroLogin,
+    loading_login: state.AutenticacaoReducer.loading_login,
   }
 )
 }
