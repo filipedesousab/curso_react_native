@@ -9,10 +9,10 @@ import BoasVindas from './components/boasVindas';
 import Principal from './components/principal';
 
 export default props => (
-  <Router sceneStyle={{ paddingTop: 50 }}>
-    <Scene key='login' component={FormLogin} title="Login" />
-    <Scene key='cadastro' component={FormCadastro} title="Cadastro" />
-    <Scene key='boasVindas' component={BoasVindas} title="Bem Vindo"/>
-    <Scene key='principal' component={Principal} title="Principal"/>
+  <Router sceneStyle={{ paddingTop: 0 }} navigationBarStyle={{ backgroundColor: '#115E54'}} titleStyle={{ color: '#fff'}}>
+    <Scene key='login' component={FormLogin} title="Login" hideNavBar />
+    <Scene key='cadastro' component={FormCadastro} title="Cadastro" hideNavBar={false} />
+    <Scene key='boasVindas' component={BoasVindas} title="Bem Vindo" hideNavBar />
+    <Scene key='principal' component={Principal} title="Principal" hideNavBar />
   </Router>
 );
